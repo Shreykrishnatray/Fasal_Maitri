@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Environment variables
 .env
 .env.local
@@ -194,4 +195,202 @@ celerybeat.pid
 dmypy.json
 
 # Pyre type checker
+=======
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# AI Models (large files)
+models/param-1-2.9b-instruct/
+*.safetensors
+*.bin
+*.pt
+*.pth
+
+# Audio files
+*.wav
+*.mp3
+*.ogg
+*.flac
+*.m4a
+
+# Temporary files
+temp/
+tmp/
+*.tmp
+*.temp
+
+# Cache
+.cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Deployment
+.railway/
+.replit/
+
+# Sensitive data
+secrets.json
+credentials.json
+*.key
+*.pem
+
+# Large files
+*.zip
+*.tar.gz
+*.rar
+
+# Node modules (if any)
+node_modules/
+npm-debug.log*
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+>>>>>>> e15bec281abf2b62dc4fb58236aef25909e43dfc
 .pyre/ 

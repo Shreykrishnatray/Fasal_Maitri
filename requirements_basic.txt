@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 fastapi==0.104.1
 uvicorn==0.24.0
 python-multipart==0.0.6
 twilio==8.10.0
 requests==2.31.0
 python-dotenv==1.0.0
+=======
+fastapi==0.104.1
+uvicorn==0.24.0
+python-multipart==0.0.6
+twilio==8.10.0
+requests==2.31.0
+python-dotenv==1.0.0
+>>>>>>> e15bec281abf2b62dc4fb58236aef25909e43dfc
 pydantic==2.5.0 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 fastapi==0.104.1
 uvicorn==0.24.0
 python-multipart==0.0.6
@@ -14,4 +15,22 @@ numpy==1.24.3
 scipy==1.11.4
 pydub==0.25.1
 gTTS==2.4.0
+=======
+fastapi==0.104.1
+uvicorn==0.24.0
+python-multipart==0.0.6
+twilio==8.10.0
+requests==2.31.0
+python-dotenv==1.0.0
+pydantic==2.5.0
+transformers==4.35.2
+torch>=2.6.0
+torchaudio>=2.6.0
+soundfile==0.12.1
+librosa==0.10.1
+numpy==1.24.3
+scipy==1.11.4
+pydub==0.25.1
+gTTS==2.4.0
+>>>>>>> e15bec281abf2b62dc4fb58236aef25909e43dfc
 edge-tts==6.1.9 
