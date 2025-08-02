@@ -101,11 +101,16 @@ async def test_endpoint():
 @app.get("/url")
 async def get_url():
     """Get the current URL for debugging"""
+    import socket
+    hostname = socket.gethostname()
     return {
         "message": "Your Railway URL",
         "note": "Check your Railway dashboard for the actual URL",
         "status": "running",
-        "instructions": "Go to railway.app → Your Project → Deployments → Copy URL"
+        "instructions": "Go to railway.app → Your Project → Deployments → Copy URL",
+        "hostname": hostname,
+        "port": os.environ.get("PORT", 8000),
+        "railway_url_hint": "Look for URL in Railway dashboard under Details tab"
     }
 
 @app.post("/voice")
