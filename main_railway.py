@@ -17,6 +17,7 @@ app = FastAPI(title="Farmer AI Assistant", version="1.0.0")
 try:
     from config import Config
     config = Config()
+    logger.info("Config imported successfully")
 except Exception as e:
     logger.warning(f"Config import failed: {e}")
     # Create basic config
@@ -27,10 +28,12 @@ except Exception as e:
         VAKYANSH_STT_URL = os.getenv("VAKYANSH_STT_URL", "https://asr-api.open-speech-ekstep.frappe.cloud/v1/inference")
         VAKYANSH_TTS_URL = os.getenv("VAKYANSH_TTS_URL", "https://tts-api.open-speech-ekstep.frappe.cloud/v1/inference")
     config = BasicConfig()
+    logger.info("Using BasicConfig")
 
 try:
     from models.ai_model_railway import RailwayAIModel
     ai_model = RailwayAIModel()
+    logger.info("AI Model imported successfully")
 except Exception as e:
     logger.warning(f"AI model import failed: {e}")
     ai_model = None
@@ -38,6 +41,7 @@ except Exception as e:
 try:
     from services.stt_service import STTService
     stt_service = STTService(config.VAKYANSH_STT_URL)
+    logger.info("STT Service imported successfully")
 except Exception as e:
     logger.warning(f"STT service import failed: {e}")
     stt_service = None
@@ -45,6 +49,7 @@ except Exception as e:
 try:
     from services.tts_service import TTSService
     tts_service = TTSService(config.VAKYANSH_TTS_URL)
+    logger.info("TTS Service imported successfully")
 except Exception as e:
     logger.warning(f"TTS service import failed: {e}")
     tts_service = None
@@ -52,6 +57,7 @@ except Exception as e:
 try:
     from services.telephony_service import TelephonyService
     telephony_service = TelephonyService(config)
+    logger.info("Telephony Service imported successfully")
 except Exception as e:
     logger.warning(f"Telephony service import failed: {e}")
     telephony_service = None
@@ -61,7 +67,12 @@ conversation_contexts = {}
 
 @app.get("/")
 async def root():
-    return {"message": "Farmer AI Assistant API", "status": "running", "deployment": "railway"}
+    return {
+        "message": "Farmer AI Assistant API", 
+        "status": "running", 
+        "deployment": "railway",
+        "note": "Your app is working! Check Railway dashboard for URL."
+    }
 
 @app.get("/health")
 async def health_check():
@@ -74,7 +85,8 @@ async def health_check():
             "stt_service": stt_service is not None,
             "tts_service": tts_service is not None,
             "telephony_service": telephony_service is not None
-        }
+        },
+        "note": "App is running successfully on Railway"
     }
 
 @app.get("/test")
@@ -82,7 +94,8 @@ async def test_endpoint():
     """Test endpoint for Railway"""
     return {
         "message": "Railway deployment test successful!",
-        "timestamp": "2024-01-01T00:00:00Z"
+        "timestamp": "2024-01-01T00:00:00Z",
+        "status": "working"
     }
 
 @app.get("/url")
@@ -91,7 +104,8 @@ async def get_url():
     return {
         "message": "Your Railway URL",
         "note": "Check your Railway dashboard for the actual URL",
-        "status": "running"
+        "status": "running",
+        "instructions": "Go to railway.app → Your Project → Deployments → Copy URL"
     }
 
 @app.post("/voice")
