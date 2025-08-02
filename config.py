@@ -19,8 +19,8 @@ class Config:
     DEVICE = os.getenv("DEVICE", "cpu")
     
     # STT/TTS Configuration
-    VAKYANSH_STT_URL = os.getenv("VAKYANSH_STT_URL", "http://localhost:8001/stt")
-    VAKYANSH_TTS_URL = os.getenv("VAKYANSH_TTS_URL", "http://localhost:8002/tts")
+    VAKYANSH_STT_URL = os.getenv("VAKYANSH_STT_URL", "https://asr-api.open-speech-ekstep.frappe.cloud/v1/inference")
+    VAKYANSH_TTS_URL = os.getenv("VAKYANSH_TTS_URL", "https://tts-api.open-speech-ekstep.frappe.cloud/v1/inference")
     
     # Server Configuration
     HOST = os.getenv("HOST", "0.0.0.0")
