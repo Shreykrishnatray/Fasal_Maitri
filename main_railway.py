@@ -85,6 +85,15 @@ async def test_endpoint():
         "timestamp": "2024-01-01T00:00:00Z"
     }
 
+@app.get("/url")
+async def get_url():
+    """Get the current URL for debugging"""
+    return {
+        "message": "Your Railway URL",
+        "note": "Check your Railway dashboard for the actual URL",
+        "status": "running"
+    }
+
 @app.post("/voice")
 async def handle_incoming_call(request: Request):
     """Handle incoming call - initial greeting"""
